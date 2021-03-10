@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Rittal.Shop.FakeServices\Rittal.Shop.FakeServices.csproj" />
+    <ProjectReference Include="..\Rittal.Shop.IServices\Rittal.Shop.IServices.csproj" />
+    <ProjectReference Include="..\Rittal.Shop.Models\Rittal.Shop.Models.csproj" />
+  </ItemGroup>
+
 </Project>

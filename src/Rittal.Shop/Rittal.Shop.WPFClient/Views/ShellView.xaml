@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
     <Grid>
+
+
+        <DockPanel>
+
+            <!-- Menu -->
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Customers" />
+                    <MenuItem Header="Orders" />
+                </MenuItem>
+            </Menu>
+
+            <!-- Toolbar -->
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button>Customers</Button>
+                <Button>Orders</Button>
+            </StackPanel>
+
+            <!-- StatusBar-->
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem>Ready</StatusBarItem>
+            </StatusBar>
+
+            <!-- Content -->
+            <Frame Source="CustomersView.xaml" />
+
+           
+
+        </DockPanel>
+        
         
     </Grid>
 </Window>
