@@ -3,6 +3,7 @@ using Rittal.Shop.IServices;
 using Rittal.Shop.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Rittal.Shop.ViewModels
 {
@@ -10,6 +11,8 @@ namespace Rittal.Shop.ViewModels
     public class CustomersViewModel : BaseViewModel
     {
         public IEnumerable<Customer> Customers { get; private set; }
+
+        public Customer SelectedCustomer { get; set; }
 
         private readonly ICustomerService customerService;
 
@@ -29,6 +32,11 @@ namespace Rittal.Shop.ViewModels
         private void Load()
         {
             Customers = customerService.Get();
+        }
+
+        public void Send()
+        {
+            Trace.WriteLine($"Send message to {SelectedCustomer.FullName}");
         }
     }
 }

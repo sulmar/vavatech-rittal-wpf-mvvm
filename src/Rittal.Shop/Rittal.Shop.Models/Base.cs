@@ -1,6 +1,6 @@
 ﻿namespace Rittal.Shop.Models
 {
-    public abstract class Base
+    public abstract class Base 
     {
 
     }
