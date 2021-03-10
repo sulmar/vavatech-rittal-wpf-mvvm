@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.WPFClient", "Ri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.Models", "Rittal.Shop.Models\Rittal.Shop.Models.csproj", "{3BA51A74-62A3-4ADE-BF0C-3A4E064C2C13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.IServices", "Rittal.Shop.IServices\Rittal.Shop.IServices.csproj", "{B2AAC032-735F-4113-992B-59B638987AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.FakeServices", "Rittal.Shop.FakeServices\Rittal.Shop.FakeServices.csproj", "{9C9D39B8-4DDD-4894-A556-5C304748CD3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.Fakers", "Rittal.Shop.Fakers\Rittal.Shop.Fakers.csproj", "{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.ViewModels", "Rittal.Shop.ViewModels\Rittal.Shop.ViewModels.csproj", "{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,22 @@ Global
 		{3BA51A74-62A3-4ADE-BF0C-3A4E064C2C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA51A74-62A3-4ADE-BF0C-3A4E064C2C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BA51A74-62A3-4ADE-BF0C-3A4E064C2C13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2AAC032-735F-4113-992B-59B638987AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2AAC032-735F-4113-992B-59B638987AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2AAC032-735F-4113-992B-59B638987AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2AAC032-735F-4113-992B-59B638987AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9D39B8-4DDD-4894-A556-5C304748CD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9D39B8-4DDD-4894-A556-5C304748CD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9D39B8-4DDD-4894-A556-5C304748CD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9D39B8-4DDD-4894-A556-5C304748CD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
