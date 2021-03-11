@@ -17,7 +17,7 @@
     <Page.Resources>
 
         <c:BoolToVisilibityConverter x:Key="MyConverter" />
-        <c:CMYKToBrushConverter x:Key="RGBConverter" />
+        <c:RGBToBrushConverter x:Key="RGBConverter" />
 
         <Style x:Key="Corpo" TargetType="Button" >
 
@@ -66,6 +66,16 @@
             <Label>Last name</Label>
             <TextBox Text="{Binding SelectedCustomer.LastName}" />
 
+
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} {1}">
+                        <Binding Path="SelectedCustomer.FirstName" />
+                        <Binding Path="SelectedCustomer.LastName" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
             <Label>Credit amoumnt</Label>
             <TextBox Text="{Binding SelectedCustomer.CreditAmount}" />
 
@@ -87,36 +97,14 @@
                     x:Name="sliderWidth"
                     />
 
-            <Slider Width="200" Value="50" 
-                    Minimum="0"
-                    Maximum="200"
-                    TickFrequency="1"
-                    IsSnapToTickEnabled="True"
-                    x:Name="R"
-                    />
 
-            <Slider Width="200" Value="50" 
-                    Minimum="0"
-                    Maximum="200"
-                    TickFrequency="1"
-                    IsSnapToTickEnabled="True"
-                    x:Name="G"
-                    />
-
-
-            <Slider Width="200" Value="50" 
-                    Minimum="0"
-                    Maximum="200"
-                    TickFrequency="1"
-                    IsSnapToTickEnabled="True"
-                    x:Name="B"
-                    />
 
 
             <TextBox Text="{Binding ElementName=sliderWidth, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
 
             <Ellipse Width="{Binding ElementName=sliderWidth, Path=Value}" 
-                     Height="100" >
+                     Height="{Binding ElementName=sliderWidth, Path=Value}" 
+                     >
 
                 <Ellipse.Fill>
                     <MultiBinding Converter="{StaticResource RGBConverter}">
@@ -128,14 +116,36 @@
 
             </Ellipse>
 
-            <TextBlock>
-                <TextBlock.Text>
-                    <MultiBinding StringFormat="{}{0} {1}">
-                        <Binding Path="SelectedCustomer.FirstName" />
-                        <Binding Path="SelectedCustomer.LastName" />
-                    </MultiBinding>
-                </TextBlock.Text>
-            </TextBlock>
+            <Label>R</Label>
+
+            <Slider Width="255" Value="50" 
+                    Minimum="0"
+                    Maximum="255"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="R"
+                    />
+
+            <Label>G</Label>
+
+            <Slider Width="255" Value="50" 
+                    Minimum="0"
+                    Maximum="255"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="G"
+                    />
+
+            <Label>B</Label>
+
+            <Slider Width="255" Value="50" 
+                    Minimum="0"
+                    Maximum="255"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="B"
+                    />
+
 
 
         </StackPanel>
