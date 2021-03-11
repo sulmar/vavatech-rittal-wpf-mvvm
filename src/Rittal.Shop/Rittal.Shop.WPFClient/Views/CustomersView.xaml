@@ -13,6 +13,15 @@
         <vm:CustomersViewModel />
     </Page.DataContext>
 
+    <Page.Resources>
+
+        <Style x:Key="Corpo" TargetType="Button" >
+
+            <Setter Property="Background" Value="Green" />
+        </Style>
+        
+    </Page.Resources>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -56,6 +65,7 @@
         <!-- Selected Customer -->
         
         <StackPanel Grid.Column="1">
+            
             <Label>First name</Label>
             <TextBox Text="{Binding SelectedCustomer.FirstName}" />
 
@@ -67,6 +77,11 @@
 
             <Label>Email</Label>
             <TextBox Text="{Binding SelectedCustomer.Email}" />
+
+            <Label>Birthday</Label>
+            <Image Source="{Binding SelectedCustomer.Avatar}" />
+
+            <Button Style="{StaticResource Corpo}" >Save</Button>
 
         </StackPanel>
                

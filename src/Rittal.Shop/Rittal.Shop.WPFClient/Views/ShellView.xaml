@@ -4,8 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rittal.Shop.WPFClient.Views"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
+
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="MyBackgroundBrush" Color="Blue" />
+        <SolidColorBrush x:Key="MyForegroundBrush" Color="White" />
+        
+        <sys:Double x:Key="MyWidth">200</sys:Double>
+
+        <!--<Style x:Key="MyButtonStyleDark" TargetType="Button">
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+        </Style>-->
+
+        <!--<Style x:Key="MyButtonDefaultStyle" TargetType="Button">
+            <Setter Property="Background" Value="Blue" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource MyButtonDefaultStyle}" />
+
+        <Style x:Key="DangerousButtonStyle" TargetType="Button"
+               BasedOn="{StaticResource MyButtonDefaultStyle}" >
+            <Setter Property="Background" Value="Red" />
+            <Setter Property="Width" Value="50" />
+        </Style>
+
+        <Style x:Key="MyButtonStyleLight" TargetType="Button">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+        </Style>-->
+
+    </Window.Resources>
+    
     <Grid>
 
 
@@ -24,6 +67,9 @@
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <Button>Customers</Button>
                 <Button>Orders</Button>
+                <Button>Products</Button>
+                <Button >Help</Button>
+                <Button>Send</Button>
             </StackPanel>
 
             <!-- StatusBar-->
