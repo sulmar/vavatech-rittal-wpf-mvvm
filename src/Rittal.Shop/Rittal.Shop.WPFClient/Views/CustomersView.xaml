@@ -86,7 +86,9 @@
             <Label>Birthday</Label>
             <Image Width="100" Source="{Binding SelectedCustomer.Avatar}" />
 
-            <Button Visibility="{Binding SelectedCustomer.IsRemoved, Converter={StaticResource MyConverter}}">Send</Button>
+            <Button Mousee
+                Command="{Binding SendCommand}"
+                Visibility="{Binding SelectedCustomer.IsRemoved, Converter={StaticResource MyConverter}}" >Send</Button>
             <Button>Save</Button>
 
 
@@ -97,9 +99,6 @@
                     IsSnapToTickEnabled="True"
                     x:Name="sliderWidth"
                     />
-
-
-
 
             <TextBox Text="{Binding ElementName=sliderWidth, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
 
@@ -158,6 +157,8 @@
                     x:Name="B"
                     />
 
+
+            
 
 
         </StackPanel>

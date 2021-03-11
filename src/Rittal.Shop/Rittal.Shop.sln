@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.WPFClient", "Rittal.Shop.WPFClient\Rittal.Shop.WPFClient.csproj", "{1801F0CC-54CD-4174-916C-A9749AA37028}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.Models", "Rittal.Shop.Models\Rittal.Shop.Models.csproj", "{3BA51A74-62A3-4ADE-BF0C-3A4E064C2C13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.Models", "Rittal.Shop.Models\Rittal.Shop.Models.csproj", "{3BA51A74-62A3-4ADE-BF0C-3A4E064C2C13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.IServices", "Rittal.Shop.IServices\Rittal.Shop.IServices.csproj", "{B2AAC032-735F-4113-992B-59B638987AB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.IServices", "Rittal.Shop.IServices\Rittal.Shop.IServices.csproj", "{B2AAC032-735F-4113-992B-59B638987AB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.FakeServices", "Rittal.Shop.FakeServices\Rittal.Shop.FakeServices.csproj", "{9C9D39B8-4DDD-4894-A556-5C304748CD3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.FakeServices", "Rittal.Shop.FakeServices\Rittal.Shop.FakeServices.csproj", "{9C9D39B8-4DDD-4894-A556-5C304748CD3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.Fakers", "Rittal.Shop.Fakers\Rittal.Shop.Fakers.csproj", "{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.Fakers", "Rittal.Shop.Fakers\Rittal.Shop.Fakers.csproj", "{3AD18AA1-BFD8-4ECC-AB2E-54711CDF512B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Shop.ViewModels", "Rittal.Shop.ViewModels\Rittal.Shop.ViewModels.csproj", "{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.ViewModels", "Rittal.Shop.ViewModels\Rittal.Shop.ViewModels.csproj", "{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Common", "Rittal.Common\Rittal.Common.csproj", "{043B78BB-7176-467C-B61E-98D834BC4EBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

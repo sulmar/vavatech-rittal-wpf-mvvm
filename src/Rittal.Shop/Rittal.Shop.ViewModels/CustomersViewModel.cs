@@ -1,12 +1,16 @@
-﻿using Rittal.Shop.FakeServices;
+﻿using Rittal.Common;
+using Rittal.Shop.FakeServices;
 using Rittal.Shop.IServices;
 using Rittal.Shop.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows.Input;
 
 namespace Rittal.Shop.ViewModels
 {
+
+   
 
     public class CustomersViewModel : BaseViewModel
     {
@@ -20,6 +24,9 @@ namespace Rittal.Shop.ViewModels
 
         public bool IsOverLimit => SelectedCustomer?.CreditAmount > 400;
 
+
+        public ICommand SendCommand { get; private set; }
+
         public CustomersViewModel()
             : this(new FakeCustomerService())
         {
@@ -28,10 +35,12 @@ namespace Rittal.Shop.ViewModels
 
         public CustomersViewModel(ICustomerService customerService)
         {
+            SendCommand = new DelegateCommand(Send);
+
             this.customerService = customerService;
 
             Load();
-            
+
         }
 
         private void Load()

@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rittal.Shop.WPFClient.Views"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:Rittal.Shop.ViewModels;assembly=Rittal.Shop.ViewModels"
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
+
+    <Window.DataContext>
+        <vm:ShellViewModel />
+    </Window.DataContext>
 
 
     <Window.Resources>
@@ -65,9 +70,9 @@
 
             <!-- Toolbar -->
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button>Customers</Button>
-                <Button>Orders</Button>
-                <Button>Products</Button>
+                <Button Command="{Binding ShowCustomersCommand}" >Customers</Button>
+                <Button Command="{Binding ShowOrdersCommand}" >Orders</Button>
+                <Button Command="{Binding ShowProductsCommand}">Products</Button>
                 <Button >Help</Button>
                 <Button>Send</Button>
             </StackPanel>
