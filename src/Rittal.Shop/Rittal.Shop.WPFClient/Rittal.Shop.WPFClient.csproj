@@ -59,7 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\BoolToVisilibityConverter.cs" />
-    <Compile Include="Converters\CMYKToBrushConverter.cs" />
+    <Compile Include="Converters\RGBToBrushConverter.cs" />
     <Compile Include="Converters\LimitConverter.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>

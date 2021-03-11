@@ -18,6 +18,7 @@
 
         <c:BoolToVisilibityConverter x:Key="MyConverter" />
         <c:RGBToBrushConverter x:Key="RGBConverter" />
+        <c:RGBToColorConverter x:Key="ColorConverter" />
 
         <Style x:Key="Corpo" TargetType="Button" >
 
@@ -103,16 +104,27 @@
             <TextBox Text="{Binding ElementName=sliderWidth, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
 
             <Ellipse Width="{Binding ElementName=sliderWidth, Path=Value}" 
-                     Height="{Binding ElementName=sliderWidth, Path=Value}" 
-                     >
+                     Height="{Binding ElementName=sliderWidth, Path=Value}" >
 
                 <Ellipse.Fill>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <MultiBinding Converter="{StaticResource ColorConverter}">
+                                <Binding ElementName="R" Path="Value" />
+                                <Binding ElementName="G" Path="Value" />
+                                <Binding ElementName="B" Path="Value" />
+                            </MultiBinding>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Ellipse.Fill>
+
+                <!--<Ellipse.Fill>
                     <MultiBinding Converter="{StaticResource RGBConverter}">
                         <Binding ElementName="R" Path="Value" />
                         <Binding ElementName="G" Path="Value" />
                         <Binding ElementName="B" Path="Value" />
                     </MultiBinding>
-                </Ellipse.Fill>
+                </Ellipse.Fill>-->
 
             </Ellipse>
 
