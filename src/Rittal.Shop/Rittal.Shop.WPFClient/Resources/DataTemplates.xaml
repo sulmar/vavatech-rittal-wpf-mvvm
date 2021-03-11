@@ -1,8 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:m="clr-namespace:Rittal.Shop.Models;assembly=Rittal.Shop.Models"
+                       xmlns:c="clr-namespace:Rittal.Shop.WPFClient.Converters"
                     >
-
+    
+    <c:LimitConverter x:Key="LimitConverter" />
 
     <DataTemplate x:Key="CustomerTemplate" DataType="{x:Type m:Customer}">
 
@@ -23,7 +25,12 @@
 
                         <Style.Triggers>
                             
-                            <DataTrigger Binding="{Binding Path=IsOverLimit}" Value="True">
+                            <!--<DataTrigger Binding="{Binding Path=IsOverLimit}" Value="True">
+                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="Background" Value="Yellow" />
+                            </DataTrigger>-->
+
+                            <DataTrigger Binding="{Binding Path=CreditAmount, Converter={StaticResource LimitConverter}, ConverterParameter=500}" Value="True">
                                 <Setter Property="Foreground" Value="Red" />
                                 <Setter Property="Background" Value="Yellow" />
                             </DataTrigger>
@@ -38,7 +45,9 @@
                 
             </TextBlock>
 
-            
+            <CheckBox IsChecked="{Binding IsRemoved}" />
+
+
             <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.Message}" />
 
             <Button Content="Send" Style="{StaticResource DangerousButtonStyle}" />

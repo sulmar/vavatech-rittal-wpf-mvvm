@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:vm="clr-namespace:Rittal.Shop.ViewModels;assembly=Rittal.Shop.ViewModels"      
       xmlns:m="clr-namespace:Rittal.Shop.Models;assembly=Rittal.Shop.Models"
+      xmlns:c="clr-namespace:Rittal.Shop.WPFClient.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomersView">
@@ -14,7 +15,10 @@
     </Page.DataContext>
 
     <Page.Resources>
-        
+
+        <c:BoolToVisilibityConverter x:Key="MyConverter" />
+        <c:CMYKToBrushConverter x:Key="RGBConverter" />
+
         <Style x:Key="Corpo" TargetType="Button" >
 
             <Setter Property="Background" Value="Green" />
@@ -24,10 +28,10 @@
             <Setter Property="Width" Value="150" />
         </Style>
 
-        <Style TargetType="TextBox">
+        <Style TargetType="TextBox" >
             <Setter Property="Width" Value="100" />
         </Style>
-        
+
 
     </Page.Resources>
 
@@ -53,9 +57,9 @@
 
 
         <!-- Selected Customer -->
-        
+
         <StackPanel Grid.Column="1">
-            
+
             <Label>First name</Label>
             <TextBox Text="{Binding SelectedCustomer.FirstName}" />
 
@@ -69,12 +73,73 @@
             <TextBox Text="{Binding SelectedCustomer.Email}" />
 
             <Label>Birthday</Label>
-            <Image Source="{Binding SelectedCustomer.Avatar}" />
+            <Image Width="100" Source="{Binding SelectedCustomer.Avatar}" />
 
-            <Button Style="{StaticResource Corpo}" >Save</Button>
+            <Button Visibility="{Binding SelectedCustomer.IsRemoved, Converter={StaticResource MyConverter}}">Send</Button>
+            <Button>Save</Button>
+
+
+            <Slider Width="200" Value="50" 
+                    Minimum="0"
+                    Maximum="200"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="sliderWidth"
+                    />
+
+            <Slider Width="200" Value="50" 
+                    Minimum="0"
+                    Maximum="200"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="R"
+                    />
+
+            <Slider Width="200" Value="50" 
+                    Minimum="0"
+                    Maximum="200"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="G"
+                    />
+
+
+            <Slider Width="200" Value="50" 
+                    Minimum="0"
+                    Maximum="200"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    x:Name="B"
+                    />
+
+
+            <TextBox Text="{Binding ElementName=sliderWidth, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+            <Ellipse Width="{Binding ElementName=sliderWidth, Path=Value}" 
+                     Height="100" >
+
+                <Ellipse.Fill>
+                    <MultiBinding Converter="{StaticResource RGBConverter}">
+                        <Binding ElementName="R" Path="Value" />
+                        <Binding ElementName="G" Path="Value" />
+                        <Binding ElementName="B" Path="Value" />
+                    </MultiBinding>
+                </Ellipse.Fill>
+
+            </Ellipse>
+
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} {1}">
+                        <Binding Path="SelectedCustomer.FirstName" />
+                        <Binding Path="SelectedCustomer.LastName" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
 
         </StackPanel>
-               
-        
+
+
     </Grid>
 </Page>

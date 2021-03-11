@@ -23,7 +23,6 @@ namespace Rittal.Shop.WPFClient.Views
         public CustomersView()
         {
             InitializeComponent();
-
            
         }
     }

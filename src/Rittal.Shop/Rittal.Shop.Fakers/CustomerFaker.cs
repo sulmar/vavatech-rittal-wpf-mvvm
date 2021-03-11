@@ -18,7 +18,7 @@ namespace Rittal.Shop.Fakers
             RuleFor(p => p.CustomerType, f => f.PickRandom<CustomerType>());
             RuleFor(p => p.Avatar, f => f.Person.Avatar);
             RuleFor(p => p.CreditAmount, f => f.Random.Decimal(1, 1000).OrNull(f, 0.2f) );
-            RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.3f));
+            RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.8f));
         }
     }
 }
