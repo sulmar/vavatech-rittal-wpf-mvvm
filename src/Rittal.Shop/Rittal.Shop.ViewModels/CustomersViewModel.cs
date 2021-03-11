@@ -60,7 +60,8 @@ namespace Rittal.Shop.ViewModels
 
         public void Save()
         {
-
+            SelectedCustomer.FirstName = "John";
+            SelectedCustomer.LastName = "Smith";
         }
     }
 }
