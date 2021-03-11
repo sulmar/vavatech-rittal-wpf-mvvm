@@ -6,6 +6,7 @@
       xmlns:vm="clr-namespace:Rittal.Shop.ViewModels;assembly=Rittal.Shop.ViewModels"      
       xmlns:m="clr-namespace:Rittal.Shop.Models;assembly=Rittal.Shop.Models"
       xmlns:c="clr-namespace:Rittal.Shop.WPFClient.Converters"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomersView">
@@ -89,7 +90,16 @@
             <Button 
                 Command="{Binding SendCommand}"
                 Visibility="{Binding SelectedCustomer.IsRemoved, Converter={StaticResource MyConverter}}" >Send</Button>
-            <Button>Save</Button>
+
+            <!-- Install-Package Microsoft.Xaml.Behaviors.Wpf -->
+
+            <Button Content="Save" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseEnter">
+                        <i:InvokeCommandAction Command="{Binding SaveCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
 
 
             <Slider Width="200" Value="50" 

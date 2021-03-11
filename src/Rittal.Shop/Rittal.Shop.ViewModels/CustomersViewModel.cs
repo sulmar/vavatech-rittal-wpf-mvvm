@@ -26,6 +26,7 @@ namespace Rittal.Shop.ViewModels
 
 
         public ICommand SendCommand { get; private set; }
+        public ICommand SaveCommand { get; private set; }
 
         public CustomersViewModel()
             : this(new FakeCustomerService())
@@ -36,6 +37,7 @@ namespace Rittal.Shop.ViewModels
         public CustomersViewModel(ICustomerService customerService)
         {
             SendCommand = new DelegateCommand(Send);
+            SaveCommand = new DelegateCommand(Save);
 
             this.customerService = customerService;
 
@@ -53,6 +55,12 @@ namespace Rittal.Shop.ViewModels
         public void Send()
         {
             Trace.WriteLine($"Send message to {SelectedCustomer.FullName}");
+        }
+
+
+        public void Save()
+        {
+
         }
     }
 }
