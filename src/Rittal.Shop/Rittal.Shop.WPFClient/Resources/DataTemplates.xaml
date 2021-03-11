@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:m="clr-namespace:Rittal.Shop.Models;assembly=Rittal.Shop.Models"
+                    >
+
+
+    <DataTemplate x:Key="CustomerTemplate" DataType="{x:Type m:Customer}">
+
+        <StackPanel Orientation="Horizontal">
+
+            <Image Source="{Binding Path=Avatar}" />
+
+            <TextBox Text="{Binding FirstName}" />
+            <TextBlock Width="50" Text="{Binding LastName}" />
+
+            <TextBlock Width="100"  Text="{Binding Path=CreditAmount}">
+
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        
+                        <Setter Property="Background"  Value="White" />
+                        <Setter Property="Foreground" Value="Black" />
+
+                        <Style.Triggers>
+                            
+                            <DataTrigger Binding="{Binding Path=IsOverLimit}" Value="True">
+                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="Background" Value="Yellow" />
+                            </DataTrigger>
+
+                            <!--<DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.IsOverLimit}" Value="True" >
+                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="Background" Value="Yellow" />
+                            </DataTrigger>-->
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+                
+            </TextBlock>
+
+            
+            <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.Message}" />
+
+            <Button Content="Send" Style="{StaticResource DangerousButtonStyle}" />
+
+        </StackPanel>
+
+    </DataTemplate>
+
+</ResourceDictionary>

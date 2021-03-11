@@ -11,6 +11,8 @@
                 <ResourceDictionary Source="Resources/CheckboxStyles.xaml" />
                 <ResourceDictionary Source="Resources/ButtonStyles.xaml" />
                 
+                <ResourceDictionary Source="Resources/DataTemplates.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>

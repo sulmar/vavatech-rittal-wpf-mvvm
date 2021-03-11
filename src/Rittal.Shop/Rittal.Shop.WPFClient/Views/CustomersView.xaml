@@ -14,12 +14,21 @@
     </Page.DataContext>
 
     <Page.Resources>
-
+        
         <Style x:Key="Corpo" TargetType="Button" >
 
             <Setter Property="Background" Value="Green" />
         </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Width" Value="150" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="100" />
+        </Style>
         
+
     </Page.Resources>
 
     <Grid>
@@ -38,28 +47,9 @@
 
         <ListBox 
             ItemsSource="{Binding Path=Customers}"
-            SelectedItem="{Binding Path=SelectedCustomer}" >
-
-            <ListBox.ItemTemplate>
-                
-                <DataTemplate DataType="{x:Type m:Customer}">
-                    
-                    <StackPanel Orientation="Horizontal">
-
-                        <Image Source="{Binding Path=Avatar}" />
-
-                        <TextBox Width="100" Text="{Binding FirstName}" />
-                        <TextBlock Width="100" Text="{Binding LastName}" />
-                        <TextBlock Width="100" Text="{Binding Path=CreditAmount}" />
-                        <Button Content="Send" />
-
-                    </StackPanel>
-                    
-                </DataTemplate>
-                
-            </ListBox.ItemTemplate>
-            
-        </ListBox>
+            SelectedItem="{Binding Path=SelectedCustomer}"
+            ItemTemplate="{StaticResource CustomerTemplate}" 
+             />
 
 
         <!-- Selected Customer -->

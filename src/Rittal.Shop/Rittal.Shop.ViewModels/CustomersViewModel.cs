@@ -16,6 +16,10 @@ namespace Rittal.Shop.ViewModels
 
         private readonly ICustomerService customerService;
 
+        public string Message { get; set; }
+
+        public bool IsOverLimit => SelectedCustomer?.CreditAmount > 400;
+
         public CustomersViewModel()
             : this(new FakeCustomerService())
         {
@@ -27,11 +31,14 @@ namespace Rittal.Shop.ViewModels
             this.customerService = customerService;
 
             Load();
+            
         }
 
         private void Load()
         {
             Customers = customerService.Get();
+
+            Message = "Hello World!";
         }
 
         public void Send()
