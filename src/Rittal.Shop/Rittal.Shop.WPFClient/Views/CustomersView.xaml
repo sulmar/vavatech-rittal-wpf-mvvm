@@ -86,7 +86,7 @@
             <Label>Birthday</Label>
             <Image Width="100" Source="{Binding SelectedCustomer.Avatar}" />
 
-            <Button Mousee
+            <Button 
                 Command="{Binding SendCommand}"
                 Visibility="{Binding SelectedCustomer.IsRemoved, Converter={StaticResource MyConverter}}" >Send</Button>
             <Button>Save</Button>
