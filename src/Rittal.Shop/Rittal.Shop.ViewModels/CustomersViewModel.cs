@@ -3,22 +3,17 @@ using Rittal.Shop.Fakers;
 using Rittal.Shop.FakeServices;
 using Rittal.Shop.IServices;
 using Rittal.Shop.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
-using Rittal.Shop.ViewModels.Extensions;
 using System.Linq;
+using System.ComponentModel;
 
 namespace Rittal.Shop.ViewModels
 {
 
-   
-
     public class CustomersViewModel : BaseViewModel
     {
-        public ICollection<Customer> Customers { get; private set; }
+        public BindingList<Customer> Customers { get; private set; }
 
         public Customer SelectedCustomer { get; set; }
 
@@ -56,18 +51,12 @@ namespace Rittal.Shop.ViewModels
 
         private void Load()
         {
-            Customers = customerService.Get().ToObservableCollection();
+            Customers = new BindingList<Customer>(customerService.Get().ToList());
 
-            //foreach (var customer in Customers)
-            //{
-            //    customer.PropertyChanged += (s, e) =>
-            //    {
-            //        if (e.PropertyName == nameof(Customer.CreditAmount))
-            //        {
-            //            OnPropertyChanged(nameof(TotalCreditAmount));
-            //        }
-            //    };
-            //}
+            Customers.ListChanged+=(s, e) =>
+            {
+                OnPropertyChanged(nameof(TotalCreditAmount));
+            };
 
             Message = "Hello World!";
         }

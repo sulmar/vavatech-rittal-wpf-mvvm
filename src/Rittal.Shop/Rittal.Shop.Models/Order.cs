@@ -20,26 +20,26 @@ namespace Rittal.Shop.Models
 
         public Order()
         {
-            Details.CollectionChanged += Details_CollectionChanged;
+           // Details.CollectionChanged += Details_CollectionChanged;
         }
 
-        private void Details_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add )
-            {
-                foreach(var item in e.NewItems)
-                {
-                    item.PropertyChanged += (s, e) =>
-                    {
-                        if (e.PropertyName == nameof(Customer.CreditAmount))
-                        {
-                            OnPropertyChanged(nameof(TotalCreditAmount));
-                        }
-                    };
-                }
+        //private void Details_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        //{
+        //    if (e.Action == NotifyCollectionChangedAction.Add )
+        //    {
+        //        foreach(var item in e.NewItems)
+        //        {
+        //            item.PropertyChanged += (s, e) =>
+        //            {
+        //                if (e.PropertyName == nameof(Customer.CreditAmount))
+        //                {
+        //                    OnPropertyChanged(nameof(TotalCreditAmount));
+        //                }
+        //            };
+        //        }
                
-            }
-        }
+        //    }
+        //}
     }
 
     public class OrderDetail : BaseEntity

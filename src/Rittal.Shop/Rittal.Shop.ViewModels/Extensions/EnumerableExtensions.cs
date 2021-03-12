@@ -12,26 +12,5 @@ namespace Rittal.Shop.ViewModels.Extensions
         {
             return new ObservableCollection<T>(items);
         }
-
-        
-    }
-
-    public class ObservableCollectionEx<T> : ObservableCollection<T>
-        where T : INotifyPropertyChanged
-    {
-        public ObservableCollectionEx(IEnumerable<T> collection, string propertyName, params string[] notifyPropertyName)
-            : base(collection)
-        {
-            foreach (var item in collection)
-            {
-                item.PropertyChanged += (s, e) =>
-                {
-                    if (e.PropertyName == propertyName)
-                    {
-                        //base.OnPropertyChanged(this, new PropertyChangingEventArgs(notifyPropertyName));
-                    }
-                };
-            }
-        }
     }
 }
