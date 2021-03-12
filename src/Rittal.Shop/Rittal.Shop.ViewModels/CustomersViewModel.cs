@@ -16,9 +16,17 @@ namespace Rittal.Shop.ViewModels
     {
         public BindingList<Customer> Customers { get; private set; }
 
-        public Customer SelectedCustomer { get; set; }
+        public Customer SelectedCustomer
+        {
+            get => selectedCustomer; set
+            {
+                selectedCustomer = value;
+                OnPropertyChanged();
+            }
+        }
 
         private readonly ICustomerService customerService;
+        private Customer selectedCustomer;
 
         public string Message { get; set; }
 
@@ -31,7 +39,7 @@ namespace Rittal.Shop.ViewModels
         public ICommand AddCustomerCommand { get; set; }
 
 
-        public decimal TotalCreditAmount => Customers.Where(c=>c.CreditAmount.HasValue).Sum(c => c.CreditAmount.Value);
+        public decimal TotalCreditAmount => Customers.Where(c => c.CreditAmount.HasValue).Sum(c => c.CreditAmount.Value);
 
         //public CustomersViewModel()
         //    : this(new FakeCustomerService())
@@ -54,10 +62,10 @@ namespace Rittal.Shop.ViewModels
         {
             Customers = customerService.Get().ToBindingList();
 
-            Customers.ListChanged+=(s, e) =>
-            {
-                OnPropertyChanged(nameof(TotalCreditAmount));
-            };
+            Customers.ListChanged += (s, e) =>
+              {
+                  OnPropertyChanged(nameof(TotalCreditAmount));
+              };
 
             Message = "Hello World!";
         }

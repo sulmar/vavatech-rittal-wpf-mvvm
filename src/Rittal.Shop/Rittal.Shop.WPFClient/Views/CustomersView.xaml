@@ -80,7 +80,7 @@
 
 
             <Label>Full name</Label>
-            <TextBox Text="{Binding SelectedCustomer.FullName}" />
+            <TextBlock Text="{Binding SelectedCustomer.FullName}" />
             
             <TextBlock>
                 <TextBlock.Text>
