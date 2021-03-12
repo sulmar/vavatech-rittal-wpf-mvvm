@@ -1,5 +1,4 @@
 ﻿using Bogus;
-using Rittal.Shop.Fakers;
 using Rittal.Shop.IServices;
 using Rittal.Shop.Models;
 using System;
@@ -12,10 +11,10 @@ namespace Rittal.Shop.FakeServices
     {
         private readonly ICollection<Customer> customers;
 
-        public FakeCustomerService()
-            : this(new CustomerFaker())
-        {
-        }
+        //public FakeCustomerService()
+        //    : this(new CustomerFaker())
+        //{
+        //}
 
         public FakeCustomerService(Faker<Customer> faker)
         {

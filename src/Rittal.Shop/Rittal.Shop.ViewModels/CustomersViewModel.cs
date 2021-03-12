@@ -33,11 +33,11 @@ namespace Rittal.Shop.ViewModels
 
         public decimal TotalCreditAmount => Customers.Where(c=>c.CreditAmount.HasValue).Sum(c => c.CreditAmount.Value);
 
-        public CustomersViewModel()
-            : this(new FakeCustomerService())
-        {
+        //public CustomersViewModel()
+        //    : this(new FakeCustomerService())
+        //{
 
-        }
+        //}
 
         public CustomersViewModel(ICustomerService customerService)
         {

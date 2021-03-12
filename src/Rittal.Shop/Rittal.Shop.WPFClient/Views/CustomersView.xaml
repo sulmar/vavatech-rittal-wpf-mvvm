@@ -7,13 +7,14 @@
       xmlns:m="clr-namespace:Rittal.Shop.Models;assembly=Rittal.Shop.Models"
       xmlns:c="clr-namespace:Rittal.Shop.WPFClient.Converters"
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=CustomersViewModel}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomersView">
 
-    <Page.DataContext>
-        <vm:CustomersViewModel />
-    </Page.DataContext>
+    <!--<Page.DataContext>
+        <vm:CustomersViewModel   />
+    </Page.DataContext>-->
 
     <Page.Resources>
 
