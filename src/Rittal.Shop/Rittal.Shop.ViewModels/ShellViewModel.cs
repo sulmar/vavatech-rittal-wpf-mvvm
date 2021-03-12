@@ -15,6 +15,7 @@ namespace Rittal.Shop.ViewModels
         //public ICommand ShowOrdersCommand { get; private set; }
         //public ICommand ShowProductsCommand { get; private set; }
 
+
         public ICommand ShowViewCommand { get; private set; }
 
         public INavigationService NavigationService { get; set; }

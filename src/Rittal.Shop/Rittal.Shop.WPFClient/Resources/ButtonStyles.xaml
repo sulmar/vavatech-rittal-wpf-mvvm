@@ -2,11 +2,41 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="MyButtonDefaultStyle" TargetType="Button">
+        
         <Setter Property="Background" Value="DarkBlue" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Width" Value="100" />
         <Setter Property="Height" Value="50" />
         <Setter Property="Margin" Value="5" />
+
+        <Style.Triggers>
+            
+            <!--<Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Width" Value="200" />
+            </Trigger>            
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>-->
+
+            <MultiTrigger>
+                
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                
+                <MultiTrigger.Setters>
+                    <Setter Property="Width" Value="200" />
+                    <Setter Property="Opacity" Value="0.5" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            
+            
+
+        </Style.Triggers>
+
+
     </Style>
 
     <Style TargetType="Button" BasedOn="{StaticResource MyButtonDefaultStyle}" />
@@ -24,5 +54,7 @@
         <Setter Property="Height" Value="50" />
         <Setter Property="Margin" Value="5" />
     </Style>
+
+  
 
 </ResourceDictionary>

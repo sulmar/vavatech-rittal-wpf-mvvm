@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rittal.Shop.WPFClient.Views"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:b="clr-namespace:Rittal.Shop.WPFClient.Behaviors"
         xmlns:vm="clr-namespace:Rittal.Shop.ViewModels;assembly=Rittal.Shop.ViewModels"
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ShellViewModel}"
         mc:Ignorable="d"
@@ -71,11 +73,39 @@
 
             <!-- Toolbar -->
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Command="{Binding ShowViewCommand}" CommandParameter="Customers">Customers</Button>
+                <Button Command="{Binding ShowViewCommand}" CommandParameter="Customers" Content="Customers">
+                      
+                </Button>
+                
                 <Button Command="{Binding ShowViewCommand}" CommandParameter="Orders" >Orders</Button>
                 <Button Command="{Binding ShowViewCommand}" CommandParameter="Products" >Products</Button>
-                <Button >Help</Button>
-                <Button>Send</Button>
+                
+                <Button Content="Help">
+                    
+                    <i:Interaction.Behaviors>
+                        <b:ButtonBehavior Width="{Binding ElementName=SliderWidth, Path=Value}" />
+                    </i:Interaction.Behaviors>
+                    
+                </Button>
+
+                <Slider x:Name="SliderWidth" Value="50" Width="100" Minimum="20" Maximum="200"  />
+
+                <Button Content="Send">
+
+                    <i:Interaction.Behaviors>
+                        <b:ButtonBehavior Width="{Binding ElementName=SliderWidth, Path=Value}" />
+                    </i:Interaction.Behaviors>
+                    
+                    <!--<Button.Style TargetType="Button">
+                        <Style>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Width" Value="250" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>-->
+                </Button>
             </StackPanel>
 
             <!-- StatusBar-->

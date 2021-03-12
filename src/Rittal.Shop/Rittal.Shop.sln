@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.Fakers", "Ritta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Shop.ViewModels", "Rittal.Shop.ViewModels\Rittal.Shop.ViewModels.csproj", "{F7C73C14-F4B5-435A-934D-AE0D512F4C5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rittal.Common", "Rittal.Common\Rittal.Common.csproj", "{043B78BB-7176-467C-B61E-98D834BC4EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rittal.Common", "Rittal.Common\Rittal.Common.csproj", "{043B78BB-7176-467C-B61E-98D834BC4EBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{C293BAC0-BD57-4869-9E45-A4BDA7969497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{043B78BB-7176-467C-B61E-98D834BC4EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C293BAC0-BD57-4869-9E45-A4BDA7969497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C293BAC0-BD57-4869-9E45-A4BDA7969497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C293BAC0-BD57-4869-9E45-A4BDA7969497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C293BAC0-BD57-4869-9E45-A4BDA7969497}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

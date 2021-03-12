@@ -41,6 +41,16 @@
                                 <Setter Property="Background" Value="Yellow" />
                             </DataTrigger>
 
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding CreditAmount}" Value="100" />
+                                    <Condition Binding="{Binding IsRemoved}" Value="True" />
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.Setters>
+                                    <Setter Property="Foreground" Value="Orange" />
+                                </MultiDataTrigger.Setters>
+                            </MultiDataTrigger>
+
                             <!--<DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.IsOverLimit}" Value="True" >
                                 <Setter Property="Foreground" Value="Red" />
                                 <Setter Property="Background" Value="Yellow" />
