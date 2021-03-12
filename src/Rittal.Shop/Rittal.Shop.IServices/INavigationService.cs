@@ -17,5 +17,7 @@ namespace Rittal.Shop.IServices
         bool CanGoForward { get;  }
 
         object Parameter { get; }
+
+        string CurrentView{ get;  }
     }
 }

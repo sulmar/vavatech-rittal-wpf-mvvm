@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace Rittal.Shop.WPFClient
 {
+
     public class FrameNavigationService : INavigationService
     {
         private Frame frame;
@@ -18,6 +20,8 @@ namespace Rittal.Shop.WPFClient
         public bool CanGoForward => throw new NotImplementedException();
 
         public object Parameter => throw new NotImplementedException();
+
+        public string CurrentView => throw new NotImplementedException();
 
         public void GoBack()
         {
@@ -39,7 +43,7 @@ namespace Rittal.Shop.WPFClient
         }
 
         private Frame Get(string name)
-        {
+        {            
             if (Application.Current.MainWindow.FindName(name) is Frame frame)
             {
                 return frame;

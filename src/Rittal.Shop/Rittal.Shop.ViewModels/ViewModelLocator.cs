@@ -1,18 +1,7 @@
 ﻿using Autofac;
-using Bogus;
-using Rittal.Shop.Fakers;
-using Rittal.Shop.FakeServices;
 using Rittal.Shop.IServices;
-using Rittal.Shop.Models;
-using Rittal.Shop.ViewModels;
-using Rittal.Shop.WPFClient.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Rittal.Shop.WPFClient
+namespace Rittal.Shop.ViewModels
 {
     public class ViewModelLocator
     {
@@ -37,9 +26,9 @@ namespace Rittal.Shop.WPFClient
             
             containerBuilder.RegisterType<ShellViewModel>().SingleInstance();
 
-            containerBuilder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
+            //  containerBuilder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
 
-
+            containerBuilder.RegisterType<MyNavigationService>().As<INavigationService>().SingleInstance();
 
             container = containerBuilder.Build();
 

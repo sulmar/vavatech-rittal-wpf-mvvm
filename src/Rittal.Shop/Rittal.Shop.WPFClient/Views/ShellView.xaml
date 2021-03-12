@@ -71,9 +71,9 @@
 
             <!-- Toolbar -->
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                <Button Command="{Binding ShowCustomersCommand}" >Customers</Button>
-                <Button Command="{Binding ShowOrdersCommand}" >Orders</Button>
-                <Button Command="{Binding ShowProductsCommand}">Products</Button>
+                <Button Command="{Binding ShowViewCommand}" CommandParameter="Customers">Customers</Button>
+                <Button Command="{Binding ShowViewCommand}" CommandParameter="Orders" >Orders</Button>
+                <Button Command="{Binding ShowViewCommand}" CommandParameter="Products" >Products</Button>
                 <Button >Help</Button>
                 <Button>Send</Button>
             </StackPanel>
@@ -84,7 +84,7 @@
             </StatusBar>
 
             <!-- Content -->
-            <Frame x:Name="MainFrame" Source="CustomersView.xaml" />
+            <Frame x:Name="MainFrame" Source="{Binding Path=NavigationService.CurrentView}" />
 
            
 
