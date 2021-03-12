@@ -84,7 +84,7 @@
             </StatusBar>
 
             <!-- Content -->
-            <Frame Source="CustomersView.xaml" />
+            <Frame x:Name="MainFrame" Source="CustomersView.xaml" />
 
            
 

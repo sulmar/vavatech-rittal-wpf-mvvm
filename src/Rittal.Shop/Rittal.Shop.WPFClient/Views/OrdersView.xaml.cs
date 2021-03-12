@@ -10,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Rittal.Shop.WPFClient.Views
 {
     /// <summary>
-    /// Interaction logic for ShellView.xaml
+    /// Interaction logic for OrdersView.xaml
     /// </summary>
-    public partial class ShellView : Window
+    public partial class OrdersView : Page
     {
-        public ShellView()
+        public OrdersView()
         {
             InitializeComponent();
-
-           
-
         }
     }
 }

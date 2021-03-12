@@ -18,10 +18,11 @@ namespace Rittal.Shop.ViewModels
 
         public Customer SelectedCustomer
         {
-            get => selectedCustomer; set
+            get => selectedCustomer; 
+            set
             {
                 selectedCustomer = value;
-                OnPropertyChanged();
+                OnPropertyChanged();                
             }
         }
 

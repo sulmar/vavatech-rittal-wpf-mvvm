@@ -37,6 +37,8 @@ namespace Rittal.Shop.WPFClient
             
             containerBuilder.RegisterType<ShellViewModel>().SingleInstance();
 
+            containerBuilder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
+
 
 
             container = containerBuilder.Build();
