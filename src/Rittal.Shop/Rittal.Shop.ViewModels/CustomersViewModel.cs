@@ -1,11 +1,15 @@
 ﻿using Rittal.Common;
+using Rittal.Shop.Fakers;
 using Rittal.Shop.FakeServices;
 using Rittal.Shop.IServices;
 using Rittal.Shop.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
+using Rittal.Shop.ViewModels.Extensions;
+using System.Linq;
 
 namespace Rittal.Shop.ViewModels
 {
@@ -14,7 +18,7 @@ namespace Rittal.Shop.ViewModels
 
     public class CustomersViewModel : BaseViewModel
     {
-        public IEnumerable<Customer> Customers { get; private set; }
+        public ICollection<Customer> Customers { get; private set; }
 
         public Customer SelectedCustomer { get; set; }
 
@@ -28,6 +32,11 @@ namespace Rittal.Shop.ViewModels
         public ICommand SendCommand { get; private set; }
         public ICommand SaveCommand { get; private set; }
 
+        public ICommand AddCustomerCommand { get; set; }
+
+
+        public decimal TotalCreditAmount => Customers.Where(c=>c.CreditAmount.HasValue).Sum(c => c.CreditAmount.Value);
+
         public CustomersViewModel()
             : this(new FakeCustomerService())
         {
@@ -38,16 +47,27 @@ namespace Rittal.Shop.ViewModels
         {
             SendCommand = new DelegateCommand(Send);
             SaveCommand = new DelegateCommand(Save);
+            AddCustomerCommand = new DelegateCommand(AddCustomer);
 
             this.customerService = customerService;
 
             Load();
-
         }
 
         private void Load()
         {
-            Customers = customerService.Get();
+            Customers = customerService.Get().ToObservableCollection();
+
+            //foreach (var customer in Customers)
+            //{
+            //    customer.PropertyChanged += (s, e) =>
+            //    {
+            //        if (e.PropertyName == nameof(Customer.CreditAmount))
+            //        {
+            //            OnPropertyChanged(nameof(TotalCreditAmount));
+            //        }
+            //    };
+            //}
 
             Message = "Hello World!";
         }
@@ -62,6 +82,14 @@ namespace Rittal.Shop.ViewModels
         {
             SelectedCustomer.FirstName = "John";
             SelectedCustomer.LastName = "Smith";
+        }
+
+        public void AddCustomer()
+        {
+            CustomerFaker customerFaker = new CustomerFaker();
+            Customer customer = customerFaker.Generate();
+
+            Customers.Add(customer);
         }
     }
 }

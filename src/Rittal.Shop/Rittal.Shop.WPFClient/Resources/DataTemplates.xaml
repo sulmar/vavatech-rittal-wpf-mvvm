@@ -18,6 +18,9 @@
             <TextBox Width="50" Text="{Binding Color}" />
             <Rectangle Width="50" Height="50" Fill="{Binding Color}" />
 
+            <TextBox Width="100"  Text="{Binding Path=CreditAmount}" />
+
+
             <TextBlock Width="100"  Text="{Binding Path=CreditAmount}">
 
                 <TextBlock.Style>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Rittal.Shop.Models
@@ -14,4 +15,7 @@ namespace Rittal.Shop.Models
 
 
     }
+
+
+    
 }

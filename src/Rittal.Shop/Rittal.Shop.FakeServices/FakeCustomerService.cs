@@ -19,7 +19,7 @@ namespace Rittal.Shop.FakeServices
 
         public FakeCustomerService(Faker<Customer> faker)
         {
-            customers = faker.Generate(100);
+            customers = faker.Generate(10);
 
         }
 
@@ -28,7 +28,7 @@ namespace Rittal.Shop.FakeServices
             customers.Add(entity);
         }
 
-        public IEnumerable<Customer> Get()
+        public ICollection<Customer> Get()
         {
             return customers;
         }

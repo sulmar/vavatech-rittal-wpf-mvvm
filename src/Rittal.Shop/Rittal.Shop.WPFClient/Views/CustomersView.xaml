@@ -51,11 +51,19 @@
 
         <!-- Customers -->
 
-        <ListBox 
+        <DockPanel>
+
+            <TextBlock DockPanel.Dock="Bottom" Text="{Binding TotalCreditAmount}" />
+            <Button DockPanel.Dock="Bottom" Content="Add Customer" Command="{Binding AddCustomerCommand}" />
+
+            <ListBox 
             ItemsSource="{Binding Path=Customers}"
             SelectedItem="{Binding Path=SelectedCustomer}"
             ItemTemplate="{StaticResource CustomerTemplate}" 
              />
+        </DockPanel>
+
+        
 
 
         <!-- Selected Customer -->

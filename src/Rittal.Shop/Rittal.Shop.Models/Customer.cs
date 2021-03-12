@@ -8,6 +8,7 @@ namespace Rittal.Shop.Models
         private string firstName;
         private string lastName;
         private string color;
+        private decimal? creditAmount;
 
         public string FirstName
         {
@@ -33,7 +34,14 @@ namespace Rittal.Shop.Models
         public string FullName => $"{FirstName} {LastName}";
         public string Email { get; set; }
         public CustomerType CustomerType { get; set; }
-        public decimal? CreditAmount { get; set; }
+        public decimal? CreditAmount
+        {
+            get => creditAmount; set
+            {
+                creditAmount = value;
+                OnPropertyChanged();
+            }
+        }
         public bool IsOverLimit => CreditAmount > 500;
         public bool IsRemoved { get; set; }
         public string Avatar { get; set; }
