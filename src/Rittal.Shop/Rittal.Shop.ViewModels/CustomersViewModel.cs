@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Windows.Input;
 using System.Linq;
 using System.ComponentModel;
+using Rittal.Shop.ViewModels.Extensions;
 
 namespace Rittal.Shop.ViewModels
 {
@@ -51,7 +52,7 @@ namespace Rittal.Shop.ViewModels
 
         private void Load()
         {
-            Customers = new BindingList<Customer>(customerService.Get().ToList());
+            Customers = customerService.Get().ToBindingList();
 
             Customers.ListChanged+=(s, e) =>
             {
