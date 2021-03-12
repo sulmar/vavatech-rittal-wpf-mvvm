@@ -91,6 +91,7 @@
     <Compile Include="Converters\RGBToBrushConverter.cs" />
     <Compile Include="Converters\LimitConverter.cs" />
     <Compile Include="FrameNavigationService.cs" />
+    <Compile Include="MarkupExtensions\IsInRoleMarkupExtension.cs" />
     <Compile Include="MyNavigationService.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>

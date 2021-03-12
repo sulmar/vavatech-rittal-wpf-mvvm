@@ -7,6 +7,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:b="clr-namespace:Rittal.Shop.WPFClient.Behaviors"
+        xmlns:me="clr-namespace:Rittal.Shop.WPFClient.MarkupExtensions"
         xmlns:vm="clr-namespace:Rittal.Shop.ViewModels;assembly=Rittal.Shop.ViewModels"
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ShellViewModel}"
         mc:Ignorable="d"
@@ -111,6 +112,8 @@
             <!-- StatusBar-->
             <StatusBar DockPanel.Dock="Bottom">
                 <StatusBarItem>Ready</StatusBarItem>
+                <StatusBarItem Content="{me:UserNameMarkupExtension}" />
+
             </StatusBar>
 
             <!-- Content -->

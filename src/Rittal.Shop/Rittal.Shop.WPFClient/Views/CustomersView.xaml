@@ -7,6 +7,7 @@
       xmlns:m="clr-namespace:Rittal.Shop.Models;assembly=Rittal.Shop.Models"
       xmlns:c="clr-namespace:Rittal.Shop.WPFClient.Converters"
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+
       DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=CustomersViewModel}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -104,7 +105,11 @@
                 Command="{Binding SendCommand}"
                 Visibility="{Binding SelectedCustomer.IsRemoved, Converter={StaticResource MyConverter}}" >Send</Button>
 
+            <Button 
+                Command="{Binding SendCommand}"
+                Visibility="{Binding SelectedCustomer.IsRemoved, Converter={c:BoolToVisilibityConverter}}" >Send</Button>
 
+            
             <TextBox Text="{Binding SelectedCustomer.Color}" />
 
             <!-- Install-Package Microsoft.Xaml.Behaviors.Wpf -->
